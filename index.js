@@ -16,22 +16,8 @@ THE PLAN
 */
 
 
-// TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateReadMe = require('./utils/generateMarkdown.js');
-
-// TODO: Create an array of questions for user input
-// const questions = [
-//     "What is the TITLE of your project?",
-//     "Write a brief DESCRIPTION of your project.",
-//     "What are the INSTALLATION instruction for this project?",
-//     "Write a brief USAGE of this project.",
-//     "Who are the CONTRIBUTORS?",
-//     "What LICENSE does this project use?",
-//     "What is your GitHub USERNAME?",
-//     "What is your EMAIL address?"
-// ];
 
 inquirer
     .prompt([
@@ -80,12 +66,16 @@ inquirer
         }
     ])
     .then((data) => {
-        //console.log(data);
-        generateReadMe(data);
+        let chosenLicense = data.license;
+        let modifyLicense = chosenLicense[0];
+        modifyLicense = modifyLicense.replace(/ /g, "_");
+        modifyLicense = modifyLicense.replace(/-/g, "_");
+
+        console.log(modifyLicense);
 
         let fileText = `
 # ${data.title}
-        
+![License](https://img.shields.io/badge/License-${modifyLicense}-blue.svg)
 ## Description 
 ${data.description}
 
@@ -99,7 +89,7 @@ ${data.usage}
 ${data.contributors}
 
 ## License
-${data.license}
+This project is covered under the following license: ${data.license}
 
 ## Questions
 My GitHub Repository: https://github.com/${data.username}
@@ -112,17 +102,3 @@ If you have any additional questions about this project please reach out and ema
             err ? console.log(err) : console.log('File Generated!')
         );
     });
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-
-}
-
-
-// // TODO: Create a function to initialize app
-// function init() {
-//     //generateReadMe();
-// }
-
-// // Function call to initialize app
-// init();
