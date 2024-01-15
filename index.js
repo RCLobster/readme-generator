@@ -76,13 +76,22 @@ inquirer
         let fileText = `
 # ${data.title}
 ![License](https://img.shields.io/badge/License-${modifyLicense}-blue.svg)
+
+## Table of Contents
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Contributors](#contributors)
+5. [License](#license)
+6. [Questions](#questions)
+
 ## Description 
 ${data.description}
 
 ## Installation
 ${data.installation}
 
-## USAGE
+## Usage
 ${data.usage}
 
 ## Contributors
