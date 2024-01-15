@@ -19,6 +19,7 @@ THE PLAN
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generateReadMe = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -32,11 +33,51 @@ const questions = [
     "What is your EMAIL address?"
 ];
 
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'title',
+            message: 'What is the TITLE of your project?'
+        },
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Write a brief DESCRIPTION of your project.'
+        },
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'What are the INSTALLATION instruction for this project?'
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Write a brief USAGE of this project.'
+        },
+        {
+            type: 'input',
+            name: 'contributors',
+            message: 'Who are the CONTRIBUTORS on this project?'
+        },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: 'Which LICENSE does this project use?',
+            choices: ['Academic Free License v3.0', 'Apache license 2.0', 'Artistic license 2.0', 'Boost Software License 1.0']
+        }
+    ])
+    .then((data) => {
+        console.log(data);
+    });
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    //generateReadMe();
+}
 
 // Function call to initialize app
 init();
