@@ -1,4 +1,24 @@
 # readme-generator
-![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+## Description
+This program lets the user generate a readme file dynamically after asking a few questions. This program runs in the terminal using node.js
+
+Questions in the terminal:
+![Alt Text](./assets/images/terminal.png)
+
+Generated file:
+![Alt Text](./assets/images/generatedFile.png)
+
+GitHub Repo: https://github.com/RCLobster/readme-generator
+
+## Installation
+N/A
+
+## Usage
+Use this program to dynamically generate a readme by answering questions.
+
+## Contributors
+Ethan Stone
+
+## License
+N/A
