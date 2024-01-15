@@ -64,7 +64,19 @@ inquirer
             type: 'checkbox',
             name: 'license',
             message: 'Which LICENSE does this project use?',
-            choices: ['Academic Free License v3.0', 'Apache license 2.0', 'Artistic license 2.0', 'Boost Software License 1.0']
+            choices: ['Apache license 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-clause "Simplified" license', 'BSD 3-clause "New" or "Revised" license', 'Boost Software License 1.0', 
+            'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 
+            'Mozilla Public License 2.0', 'The Unlicense']
+        },
+        {
+            type: 'input',
+            name: 'username',
+            message: 'What is your GitHub USERNAME?'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your EMAIL address?'
         }
     ])
     .then((data) => {
