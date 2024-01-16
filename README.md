@@ -12,7 +12,9 @@ Generated file:
 GitHub Repo: https://github.com/RCLobster/readme-generator
 
 ## Installation
-N/A
+In order to run this code you must first install dependecies for Inquirer by running two commands in the terminal:
+    1. npm init -y
+    2. npm i inquirer@8.2.4
 
 ## Usage
 Use this program to dynamically generate a readme by answering questions.
